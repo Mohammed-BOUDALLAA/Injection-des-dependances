@@ -1,6 +1,11 @@
 package ma.enset.metier;
 import ma.enset.dao.IDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("Metier")
 public class MetierImpl implements IMetier {
+    @Autowired
     private IDao dao;
     // Constructor injection
     public MetierImpl(IDao dao) {
@@ -14,7 +19,7 @@ public class MetierImpl implements IMetier {
     public double calcul() {
         double temp = dao.getData();
         double res = temp * 33;
-        return 0;
+        return 23 + res;
     }
 
     public void setDao(IDao dao) {
